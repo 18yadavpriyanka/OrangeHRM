@@ -32,24 +32,8 @@ public class MyInfoPage extends Base{
 		
 	}
 	
-	public void home() {
-		Actions act = new Actions(driver);
-		WebElement hm=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]"));
-		hm.click();
-		act.moveToElement(hm).doubleClick(hm).sendKeys(hm, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		hm.sendKeys(prop.getProperty("home"));
-		
-	}
-	public void mobile() {
-		Actions act = new Actions(driver);
-		WebElement mb=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/div[1]/div[2]/input[1]"));
-		mb.click();
-		act.moveToElement(mb).doubleClick(mb).sendKeys(mb, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		mb.sendKeys(prop.getProperty("mobile"));
-		
-	}
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[6]") WebElement homeno;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[7]") WebElement mobileno;
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[8]") WebElement workno;
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[9]") WebElement workemail;
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[10]") WebElement otherEmail;
