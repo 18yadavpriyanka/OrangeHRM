@@ -4,63 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 
 import com.Base.Base;
 
 public class MyInfoPage extends Base{
-	
-	public void ContactDetailsispresent() {
-		driver.findElement(By.xpath("//a[normalize-space()='Contact Details']")).click();
-//		driver.findElement(By.xpath("//a[contains(text(),'Contact Details')]")).click();
 
-		
-	}
+
+	@FindBy(xpath="//a[text()='Contact Details']") WebElement contactPage;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[1]") WebElement street1;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[2]") WebElement street2;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[3]") WebElement city;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[4]") WebElement state;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[5]") WebElement postalCode;
+	@FindBy(className = "oxd-select-text-input")
 	
-	public void street1() {
-		Actions act = new Actions(driver);
-		WebElement st1=driver.findElement(By.xpath("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']//div[1]//div[1]//div[1]//div[1]//div[2]//input[1]"));
-		st1.click();
-		act.moveToElement(st1).doubleClick(st1).sendKeys(st1, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		st1.sendKeys(prop.getProperty("street1"));
-		
-	}
-	public void street2() {
-		Actions act = new Actions(driver);
-		WebElement st2=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/input[1]"));
-		st2.click();
-		act.moveToElement(st2).doubleClick(st2).sendKeys(st2, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		st2.sendKeys(prop.getProperty("street2"));
-		
-	}
-	public void city() {
-		Actions act = new Actions(driver);
-		WebElement ct=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/input[1]"));
-		ct.click();
-		act.moveToElement(ct).doubleClick(ct).sendKeys(ct, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		ct.sendKeys(prop.getProperty("city"));
-		
-	}
-	public void state() {
-		Actions act = new Actions(driver);
-		WebElement st=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/input[1]"));
-		st.click();
-		act.moveToElement(st).doubleClick(st).sendKeys(st, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		st.sendKeys(prop.getProperty("state"));
-		
-	}	
-	public void zipcode() {
-		Actions act = new Actions(driver);
-		WebElement zc=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[5]/div[1]/div[2]/input[1]"));
-		zc.click();
-		act.moveToElement(zc).doubleClick(zc).sendKeys(zc, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		zc.sendKeys(prop.getProperty("zipcode"));
-		
-	}	
+
 	
 	//country
 	public void country() {
@@ -91,33 +50,10 @@ public class MyInfoPage extends Base{
 		mb.sendKeys(prop.getProperty("mobile"));
 		
 	}
-	public void work() {
-		Actions act = new Actions(driver);
-		WebElement wk=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[3]/div[1]/div[2]/input[1]"));
-		wk.click();
-		act.moveToElement(wk).doubleClick(wk).sendKeys(wk, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		wk.sendKeys(prop.getProperty("work"));
-		
-	}
-	public void workemail() {
-		Actions act = new Actions(driver);
-		WebElement wkemail=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[2]/input[1]"));
-		wkemail.click();
-		act.moveToElement(wkemail).doubleClick(wkemail).sendKeys(wkemail, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		wkemail.sendKeys(prop.getProperty("workemail"));
-		
-	}
-	public void otheremail() {
-		Actions act = new Actions(driver);
-		WebElement otemail=driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/div[1]/div[2]/div[1]/div[2]/input[1]"));
-		otemail.click();
-		act.moveToElement(otemail).doubleClick(otemail).sendKeys(otemail, Keys.CONTROL,"a",Keys.BACK_SPACE)
-		.build().perform();
-		otemail.sendKeys(prop.getProperty("otheremail"));
-		
-	}
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[8]") WebElement workno;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[9]") WebElement workemail;
+	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[10]") WebElement otherEmail;
+	
 	
 	public void save() {
 	
