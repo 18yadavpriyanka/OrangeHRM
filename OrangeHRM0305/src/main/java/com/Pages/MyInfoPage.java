@@ -17,11 +17,7 @@ public class MyInfoPage extends Base{
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[3]") WebElement city;
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[4]") WebElement state;
 	@FindBy(xpath="(//div[@class='oxd-input-group oxd-input-field-bottom-space']//input)[5]") WebElement postalCode;
-	@FindBy(className = "oxd-select-text-input")
-	
-
-	
-	//country
+	@FindBy(className = "oxd-select-text-input");
 	public void country() {
 		Actions act = new Actions(driver);
 		WebElement ct=driver.findElement(By.xpath("//div[contains(text(),'-- Select --')]"));
